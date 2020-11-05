@@ -29,10 +29,8 @@ const colors = [
           };
 
           this.isActive = true;
+          refs.btnStart.disabled = true;
           
-
-
-
           this.intervalId = setInterval(() => {    
           const max = colors.length - 1;
           const bgColors = randomIntegerFromInterval(0, max);
@@ -44,6 +42,7 @@ const colors = [
       stop() {
           clearInterval(this.intervalId);
           this.isActive = false;
+          refs.btnStart.disabled = false;
       },
   };
 
